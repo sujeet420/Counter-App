@@ -1,0 +1,24 @@
+<section class="counter-container">
+    <h1>Counter App</h1>
+    <!-- display counter value -->
+    <div class="counter-display" [@countAnimation]="count">
+        {{count}}
+    </div>
+    <!-- have three button -->
+    <div class="button-group">
+        <div (click)="increment()">➕Increment</div>
+        <div (click)="decrement()">➖Decrement</div>
+        <div (click)="reset()">🔄Reset</div>
+    </div>
+    <!-- History Tracking -->
+    <div class="history-section">
+        <h2>History</h2>
+        <ul>
+            <li *ngFor="let entry of listOfHistoryData;let i = index">
+                {{i + 1}}. {{ entry }}
+            </li>
+        </ul>
+        <button (click)="clearHistory()" class="clearhis">Clear History</button>
+
+    </div>
+</section>
